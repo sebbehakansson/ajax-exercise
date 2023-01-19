@@ -10,12 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const url = new URL('https://www.boredapi.com/api/activity/');
 let showQuote = document.getElementById('quote');
-function getBored() {
-    return __awaiter(this, void 0, void 0, function* () {
-        const respons = yield fetch(url);
-        const data = yield respons.json();
-        showQuote.innerHTML = data.activity;
-    });
-}
-;
-getBored();
+const btn = document.getElementById('nq');
+btn.addEventListener('click', function () {
+    function getBored() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const respons = yield fetch(url);
+            const data = yield respons.json();
+            showQuote.innerHTML = data.activity;
+        });
+    }
+    ;
+    getBored();
+});
